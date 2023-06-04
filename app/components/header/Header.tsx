@@ -1,6 +1,7 @@
+'use client'
 
 import { useState, MouseEvent } from "react";
-import { AppBar , Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem} from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from "next/link";
 
@@ -16,7 +17,7 @@ const Header = () => {
     const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
         setAnchorElUser(event.currentTarget);
     };
- 
+
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
