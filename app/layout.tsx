@@ -1,3 +1,5 @@
+import { UserDataProvider } from "@/lib/AppContext";
+import Header from "./components/header/Header";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -11,7 +13,14 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={inter.className} suppressHydrationWarning={true} >{children}</body>
+      <UserDataProvider>
+        <body className={inter.className} suppressHydrationWarning={true} >
+          <Header />
+          <div>
+            {children}
+          </div>
+        </body>
+      </UserDataProvider>
     </html>
   );
 };
