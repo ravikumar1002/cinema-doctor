@@ -10,7 +10,7 @@ import TodayTrending from "./components/trending/Today";
 import { TrendingDetails } from "@/src/dto/trendingDetails";
 
 const getTrendingData = async () => {
-  const trendingResponse = await GetTmdbDataAsJSON<TrendingDetails>("/trending/all/day", {
+  const trendingResponse = await GetTmdbDataAsJSON<TrendingDetails>("trending/all/day", {
     params: {
       page: "1",
     },
