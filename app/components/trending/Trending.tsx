@@ -23,7 +23,7 @@ const Trending = () => {
     };
 
     return (
-        <Box className="flex gap-4 p-3 px-6  gap-12 mb-4 ">
+        <Box className="flex p-3 px-6  gap-12 mb-4 ">
             <h1 className=' text-2xl text-fuchsia-500'>Trending </h1>
             <ToggleButtonGroup
                 color="primary"
