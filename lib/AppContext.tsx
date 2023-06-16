@@ -8,7 +8,9 @@ const userDataContext = createContext({})
 
 const UserDataProvider = ({ children }: { children: ReactNode }) => {
     const userIntialData = {
-        name: "something"
+        name: "something",
+        trendingState: "day",
+        trendingData: {},
     }
     //@ts-ignore
     const [userDataState, userDataDispatch] = useReducer(appData, userIntialData)
