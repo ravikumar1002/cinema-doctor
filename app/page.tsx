@@ -2,32 +2,31 @@ import { GetTmdbDataAsJSON } from "@/app/src/services/getApiData";
 import { GetServerSideProps } from "next";
 import MovieCard from "./components/movie-card/MovieCard";
 import axios from "axios";
+import RootLayout from "./layout";
+import { useUserData } from "@/lib/AppContext";
+import { useState } from "react";
+import Trending from "./components/trending/Trending";
+import TodayTrending from "./components/trending/Today";
+import { TrendingDetails } from "@/src/dto/trendingDetails";
 
-export const getTrendingData = async () => {
-
-  const trendingResponse = await GetTmdbDataAsJSON<any>("/trending/all/day", {
+const getTrendingData = async () => {
+  const trendingResponse = await GetTmdbDataAsJSON<TrendingDetails>("/trending/all/day", {
     params: {
-      page: "3",
+      page: "1",
     },
   });
-
-  return trendingResponse;
+  return trendingResponse
 }
 
 const Home = async () => {
 
   const trendingData = await getTrendingData();
+  console.log(trendingData)
 
   return (
     <main className="">
-      {
-        trendingData && trendingData.results.map((_, i) => {
-          return (
-            <MovieCard key={trendingData.results[i].id} movieList={trendingData.results[i]} />
-          )
-        })
-      }
-
+      <Trending />
+      <TodayTrending trendingData={trendingData.results} />
     </main>
   )
 }
