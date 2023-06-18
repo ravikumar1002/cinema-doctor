@@ -4,9 +4,11 @@
 import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import RatingPercentage from '../RatingPercentage';
+import { TrendingResult } from '@/src/dto/trendingDetails';
 
-const MovieCard = ({ movieList }: { movieList: any }) => {
+const MovieCard = ({ movieList }: { movieList: TrendingResult }) => {
     const { id, title, poster_path, release_date, vote_average, name, first_air_date } = movieList
+
     return (
         <Box className="flex flex-col w-40 shrink-0">
             <div className="">
