@@ -22,7 +22,6 @@ const MovieCard = ({ movieList }: { movieList: TrendingResult }) => {
                             alt={title}
                             className='rounded-md'
                         />
-                        {/* <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`} alt={title} className='rounded-md' /> */}
                     </Link>
                 </div>
             </div>

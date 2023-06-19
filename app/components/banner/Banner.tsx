@@ -11,10 +11,9 @@ const Banner = ({ data }: { data: IMovieDeatils }) => {
     return (
         <Box sx={{
             padding: "2rem 4rem",
-            // backgroundImage: `url(${backdropImageUrl})`,
-            // backgroundRepeat: "no-repeat",
-            // backgroundPosition: "center",
-            // backgroundSize: "cover",
+            minHeight: "100%",
+            maxHeight: "100%",
+            height: "100%",
             position: "relative",
             color: "white",
         }} className="flex gap-8 items-center">
@@ -26,17 +25,16 @@ const Banner = ({ data }: { data: IMovieDeatils }) => {
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 color: "white",
-                minHeight: "75vh",
+                minHeight: "100%",
+                maxHeight: "100%",
+                height: "100%",
                 position: "absolute",
                 top: 0,
                 left: 0,
                 width: "100%",
-                height: "100%",
                 zIndex: "-2",
                 filter: "brightness(0.5)",
-            }}>
-
-            </Box>
+            }} />
         </Box>
     )
 }
