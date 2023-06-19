@@ -5,6 +5,7 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import RatingPercentage from '../RatingPercentage';
 import { TrendingResult } from '@/src/dto/trendingDetails';
+import Image from 'next/image'
 
 const MovieCard = ({ movieList }: { movieList: TrendingResult }) => {
     const { id, title, poster_path, release_date, vote_average, name, first_air_date } = movieList
@@ -14,7 +15,14 @@ const MovieCard = ({ movieList }: { movieList: TrendingResult }) => {
             <div className="">
                 <div className="">
                     <Link href={`/movies/${id}`}>
-                        <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`} alt={title} className='rounded-md' />
+                        <Image
+                            src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`}
+                            width={300}
+                            height={300}
+                            alt={title}
+                            className='rounded-md'
+                        />
+                        {/* <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`} alt={title} className='rounded-md' /> */}
                     </Link>
                 </div>
             </div>
