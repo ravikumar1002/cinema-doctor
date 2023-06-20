@@ -19,7 +19,7 @@ const MovieCard = ({ movieList }: { movieList: TrendingResult }) => {
                             src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`}
                             width={300}
                             height={300}
-                            alt={title}
+                            alt={title || name || ''}
                             className='rounded-md'
                         />
                     </Link>
