@@ -9,6 +9,7 @@ import Trending from "./components/trending/Trending";
 import TodayTrending from "./components/trending/Today";
 import { TrendingDetails } from "@/src/dto/trendingDetails";
 import SkeletonMovieCard from "./components/movie-card/SkeletonMovieCard";
+import SkeletonCastCard from "./components/SkeletonCastCard";
 
 const getTrendingData = async () => {
   const trendingResponse = await GetTmdbDataAsJSON<TrendingDetails>("trending/all/day", {
@@ -28,10 +29,12 @@ const Home = async () => {
     <main className="">
       <Trending />
       {
-        trendingData ?  <TodayTrending trendingData={trendingData.results} /> : <SkeletonMovieCard />
+        trendingData ? <TodayTrending trendingData={trendingData.results} /> : <SkeletonMovieCard />
       }
       {/* <TodayTrending trendingData={trendingData.results} />
-      <SkeletonMovieCard /> */}
+      <SkeletonCastCard /> */}
+
+      <SkeletonCastCard />
     </main>
   )
 }
