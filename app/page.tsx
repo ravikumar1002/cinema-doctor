@@ -27,8 +27,11 @@ const Home = async () => {
   return (
     <main className="">
       <Trending />
-      <TodayTrending trendingData={trendingData.results} />
-      <SkeletonMovieCard />
+      {
+        trendingData ?  <TodayTrending trendingData={trendingData.results} /> : <SkeletonMovieCard />
+      }
+      {/* <TodayTrending trendingData={trendingData.results} />
+      <SkeletonMovieCard /> */}
     </main>
   )
 }
